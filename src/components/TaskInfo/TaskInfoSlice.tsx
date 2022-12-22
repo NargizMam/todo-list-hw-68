@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {RootState} from "../../../app/store";
+import {RootState} from "../../app/store";
 
 interface TaskInfoSlice{
     title: string,
@@ -25,4 +25,4 @@ export const taskInfoSlice = createSlice({
     }
 });
 export const selectTaskTitle = (state: RootState) => state.taskInfo.title;
-export const taskReducer = taskInfoSlice.reducer;
+export const taskInfoReducer = taskInfoSlice.reducer;

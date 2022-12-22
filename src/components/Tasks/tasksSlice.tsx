@@ -1,6 +1,7 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {Task} from "../../types";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {ApiTasksList, Task} from "../../types";
 import {fetchTasks} from "./tasksThunk";
+import axiosApi from "../../axiosApi";
 
 interface TasksState {
     items: Task[],
@@ -13,7 +14,7 @@ const initialState: TasksState ={
 };
 
 export const tasksSlice = createSlice({
-    name: 'dishes',
+    name: 'tasks',
     initialState,
     reducers: {},
     extraReducers: (builder ) => {
