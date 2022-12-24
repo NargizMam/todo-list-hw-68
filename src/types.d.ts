@@ -1,6 +1,6 @@
 export interface Task{
     title: string,
-    status: string
+    status: boolean
 }
 export interface ApiTask extends Task{
     id: string

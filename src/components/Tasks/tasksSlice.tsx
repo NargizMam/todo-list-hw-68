@@ -1,11 +1,12 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {ApiTasksList, Task} from "../../types";
-import {fetchTasks} from "./tasksThunk";
-import axiosApi from "../../axiosApi";
+import {createSlice} from "@reduxjs/toolkit";
+import {ApiTask, Task} from "../../types";
+import {addTask, fetchTasks, fulfillmentTask} from "./tasksThunk";
+import {RootState} from "../../app/store";
 
 interface TasksState {
-    items: Task[],
-    fetchLoading: 'idle'|'pending'|'success'|'failure'
+    items: ApiTask[],
+    fetchLoading: 'idle'|'pending'|'success'|'failure',
+
 }
 
 const initialState: TasksState ={
@@ -22,12 +23,32 @@ export const tasksSlice = createSlice({
             state.fetchLoading = 'pending'
         });
         builder.addCase(fetchTasks.fulfilled, (state, action) => {
+            state.fetchLoading = 'success';
             state.items = action.payload;
-            state.fetchLoading = 'success'
         });
         builder.addCase(fetchTasks.rejected, (state) => {
             state.fetchLoading = 'failure'
         });
+        builder.addCase(addTask.pending, (state) => {
+            state.fetchLoading = 'pending'
+        });
+        builder.addCase(addTask.fulfilled, (state, action) => {
+            state.fetchLoading = 'success'
+        });
+        builder.addCase(addTask.rejected, (state) => {
+            state.fetchLoading = 'failure'
+        });
+        builder.addCase(fulfillmentTask.pending, (state) => {
+            state.fetchLoading = 'pending'
+        });
+        builder.addCase(fulfillmentTask.fulfilled, (state) => {
+            state.fetchLoading = 'success'
+        });
+        builder.addCase(fulfillmentTask.rejected, (state) => {
+            state.fetchLoading = 'failure'
+        });
+
     }
 });
 export const tasksReducer = tasksSlice.reducer;
+export const loading = (state: RootState) => state.tasks.fetchLoading;

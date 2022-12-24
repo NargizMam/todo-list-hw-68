@@ -1,20 +1,36 @@
 import React from 'react';
-import {Task} from "../../types";
+import {ApiTask, Task} from "../../types";
+import {useDispatch} from "react-redux";
+import {fulfillmentTask} from "../Tasks/tasksThunk";
+import {useAppDispatch} from "../../app/hooks";
+import {stat} from "fs";
 
 interface Props {
-    task: Task;
+    id: string,
+    title: string,
+    status: boolean
 }
 
-const TaskInfo: React.FC<Props> = ({task}) => {
+const TaskInfo: React.FC<Props> = ({id, status,title}) => {
+    const dispatch = useAppDispatch();
+
+    const handleCheckboxClick = () => {
+        dispatch(fulfillmentTask({ id, status}));
+    };
     return (
         <div className="card col-6 m-2" >
-                <div className="card-body">
-                    <h5 className="card-title">{task.title}</h5>
-                    <div className="form-check">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                <div className="card-body container d-flex justify-content-between">
+                    <span className='d-flex align-items-center' >
+                          <input className="form-check-input"
+                                 type="checkbox"
+                                 value="" id="flexCheckChecked"
+                                 onChange={handleCheckboxClick}
+                                 checked={status}/>
 
-                    </div>
+                    </span>
+                    <h5 className="card-title">{title}</h5>
                 </div>
+
         </div>
     );
 };

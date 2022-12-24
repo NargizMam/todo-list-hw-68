@@ -10,9 +10,7 @@ const Tasks = () => {
 
     useEffect(() => {
         dispatch(fetchTasks());
-        tasks.map(task => {
-            console.log(task, '11111111')
-        });
+
     }, [dispatch]);
 
 
@@ -20,8 +18,11 @@ const Tasks = () => {
         <>
            <h4>All tasks</h4>
             {tasks.map(task => (
-                <TaskInfo task={task}
-                          key={Math.random()}
+                <TaskInfo
+                    key={task.id}
+                    id={task.id}
+                    title={task.title}
+                    status={task.status}
                 />
             ))}
         </>
