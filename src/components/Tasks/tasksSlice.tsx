@@ -1,17 +1,21 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {ApiTask, Task} from "../../types";
+import {ApiTask} from "../../types";
 import {addTask, fetchTasks, fulfillmentTask} from "./tasksThunk";
 import {RootState} from "../../app/store";
 
 interface TasksState {
     items: ApiTask[],
-    fetchLoading: 'idle'|'pending'|'success'|'failure',
+    fetchLoading: boolean,
+    addLoading: boolean,
+    fulfillmentLoading: boolean,
 
 }
 
 const initialState: TasksState ={
     items: [],
-    fetchLoading: 'idle'
+    fetchLoading: false,
+    addLoading: false,
+    fulfillmentLoading: false
 };
 
 export const tasksSlice = createSlice({
@@ -20,35 +24,37 @@ export const tasksSlice = createSlice({
     reducers: {},
     extraReducers: (builder ) => {
         builder.addCase(fetchTasks.pending, (state) => {
-            state.fetchLoading = 'pending'
+            state.fetchLoading = true
         });
         builder.addCase(fetchTasks.fulfilled, (state, action) => {
-            state.fetchLoading = 'success';
+            state.fetchLoading = false;
             state.items = action.payload;
         });
         builder.addCase(fetchTasks.rejected, (state) => {
-            state.fetchLoading = 'failure'
+            state.fetchLoading = false;
         });
         builder.addCase(addTask.pending, (state) => {
-            state.fetchLoading = 'pending'
+            state.addLoading = true
         });
         builder.addCase(addTask.fulfilled, (state, action) => {
-            state.fetchLoading = 'success'
+            state.addLoading = false;
         });
         builder.addCase(addTask.rejected, (state) => {
-            state.fetchLoading = 'failure'
+            state.addLoading = false;
         });
         builder.addCase(fulfillmentTask.pending, (state) => {
-            state.fetchLoading = 'pending'
+            state.fulfillmentLoading = true
         });
         builder.addCase(fulfillmentTask.fulfilled, (state) => {
-            state.fetchLoading = 'success'
+            state.fulfillmentLoading = false;
         });
         builder.addCase(fulfillmentTask.rejected, (state) => {
-            state.fetchLoading = 'failure'
+            state.fulfillmentLoading = false;
         });
 
     }
 });
 export const tasksReducer = tasksSlice.reducer;
-export const loading = (state: RootState) => state.tasks.fetchLoading;
+export const selectLoading = (state: RootState) => state.tasks.fetchLoading;
+export const selectAddLoading = (state: RootState) => state.tasks.addLoading;
+export const selectFulfillmentLoading = (state: RootState) => state.tasks.fulfillmentLoading;

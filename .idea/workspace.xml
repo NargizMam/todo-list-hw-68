@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ce65ca08-2e24-42b5-a839-47470629fdd7" name="Changes" comment="Добавление и исполнение задачи">
+      <change afterPath="$PROJECT_DIR$/src/components/Spinner/ButtonSpinner/ButtonSpinner.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Spinner/ButtonSpinner/ButtonSpinner.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Spinner/ButtonSpinner.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Spinner/Spinner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Spinner/Spinner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskForm/TaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskForm/TaskForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TaskInfo/TaskInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskInfo/TaskInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tasks/Tasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/Tasks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tasks/tasksSlice.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/tasksSlice.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JB7aJ4Dhb94hefYaDqTgsYdm0o" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;14.18.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;14.18.1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/deckstop/NEWPROJECTS/plovo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/deckstop/.nvm/versions/node/v18.12.1/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;/home/deckstop/.nvm/versions/node/v18.12.1/bin/npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/deckstop/NEWPROJECTS/todo-hw-68/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Spinner/ButtonSpinner" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce65ca08-2e24-42b5-a839-47470629fdd7" name="Changes" comment="" />
+      <created>1671539685805</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671539685805</updated>
+      <workItem from="1671539688026" duration="1299000" />
+      <workItem from="1671541079328" duration="317000" />
+      <workItem from="1671676719347" duration="619000" />
+      <workItem from="1671766739436" duration="1674000" />
+      <workItem from="1671865461455" duration="17400000" />
+      <workItem from="1671894272032" duration="4156000" />
+    </task>
+    <task id="LOCAL-00001" summary="Добавление и исполнение задачи">
+      <created>1671895314159</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671895314159</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Добавление и исполнение задачи" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление и исполнение задачи" />
+  </component>
+</project>

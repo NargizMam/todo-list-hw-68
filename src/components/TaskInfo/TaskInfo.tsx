@@ -1,9 +1,8 @@
 import React from 'react';
-import {ApiTask, Task} from "../../types";
-import {useDispatch} from "react-redux";
-import {fulfillmentTask} from "../Tasks/tasksThunk";
-import {useAppDispatch} from "../../app/hooks";
-import {stat} from "fs";
+import {fetchTasks, fulfillmentTask} from "../Tasks/tasksThunk";
+import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {selectFulfillmentLoading} from "../Tasks/tasksSlice";
+import ButtonSpinner from "../Spinner/ButtonSpinner/ButtonSpinner";
 
 interface Props {
     id: string,
@@ -13,9 +12,11 @@ interface Props {
 
 const TaskInfo: React.FC<Props> = ({id, status,title}) => {
     const dispatch = useAppDispatch();
+    const fulfillment = useAppSelector(selectFulfillmentLoading);
 
-    const handleCheckboxClick = () => {
-        dispatch(fulfillmentTask({ id, status}));
+    const handleCheckboxClick =async () => {
+       await dispatch(fulfillmentTask({ id, status}));
+       await dispatch(fetchTasks());
     };
     return (
         <div className="card col-6 m-2" >
@@ -26,7 +27,7 @@ const TaskInfo: React.FC<Props> = ({id, status,title}) => {
                                  value="" id="flexCheckChecked"
                                  onChange={handleCheckboxClick}
                                  checked={status}/>
-
+                        {fulfillment ? <ButtonSpinner/> : null}
                     </span>
                     <h5 className="card-title">{title}</h5>
                 </div>
