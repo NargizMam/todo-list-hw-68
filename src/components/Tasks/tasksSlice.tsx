@@ -36,7 +36,7 @@ export const tasksSlice = createSlice({
         builder.addCase(addTask.pending, (state) => {
             state.addLoading = true
         });
-        builder.addCase(addTask.fulfilled, (state, action) => {
+        builder.addCase(addTask.fulfilled, (state) => {
             state.addLoading = false;
         });
         builder.addCase(addTask.rejected, (state) => {
